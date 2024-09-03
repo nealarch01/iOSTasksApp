@@ -22,6 +22,7 @@ struct InProgressStack: View {
                     }
                 }
             }
+            .itemNavigation(status: .inProgress)
             .navigationTitle("In Progress")
         }
     }

@@ -25,9 +25,7 @@ struct TodoStack: View {
                     }
                 }
             }
-            .navigationDestination(for: Item.self) { item in
-                ItemInfoView(item: item, itemStatus: .notStarted)
-            }
+            .itemNavigation(status: .notStarted)
             .navigationTitle("To Do")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {

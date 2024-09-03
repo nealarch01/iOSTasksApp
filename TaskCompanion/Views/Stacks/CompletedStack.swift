@@ -22,6 +22,7 @@ struct CompletedStack: View {
                     }
                 }
             }
+            .itemNavigation(status: .complete)
             .navigationTitle("Done")
         }
     }

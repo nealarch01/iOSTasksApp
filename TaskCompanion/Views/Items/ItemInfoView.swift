@@ -49,7 +49,7 @@ struct ItemInfoView: View {
                     }
                     
                     Button(action: {
-                        updateTaskStatus(to: .inProgress)
+                        updateTaskStatus(to: .complete)
                     }) {
                         Text("Done")
                     }

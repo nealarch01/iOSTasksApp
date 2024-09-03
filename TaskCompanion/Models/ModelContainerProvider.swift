@@ -11,7 +11,7 @@ import Foundation
 struct ModelContainerProvider {
     static func createShared(insertMockData: Bool = false) -> ModelContainer {
         let schema = Schema([Item.self])
-        let modelConfiguration = ModelConfiguration(isStoredInMemoryOnly: false)
+        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
         do {
             let modelContainer = try ModelContainer(for: schema, configurations: [modelConfiguration])
             if insertMockData {
@@ -34,7 +34,7 @@ struct ModelContainerProvider {
     
     static func createForPreviews(insertMockData: Bool = true) -> ModelContainer {
         let schema = Schema([Item.self])
-        let modelConfiguration = ModelConfiguration(isStoredInMemoryOnly: true)
+        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
         do {
             let modelContainer = try ModelContainer(for: schema, configurations: [modelConfiguration])
             if insertMockData {
